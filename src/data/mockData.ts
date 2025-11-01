@@ -21,6 +21,7 @@ export interface Water {
 export interface FishImage {
   period: "ancient" | "modern1" | "modern2" | "modern3";
   label: string;
+  imageUrl?: string;
   styleAnalysis: string;
 }
 
@@ -188,6 +189,7 @@ export const fish: Fish[] = [
       {
         period: "ancient",
         label: "Ancient Woodcut",
+        imageUrl: "https://cdn.jsdelivr.net/gh/kazim01mao/Interactivemythicalfishexplorer@da05daa62c3726f6c0e97a17133f39f36e5e3369/src/Fish/wenyao.png",
         styleAnalysis:
           "Classic Song Dynasty illustration style with delicate line work and balanced composition. The creature is depicted in profile with carefully rendered scales and feathers, showing the integration of fish and bird elements. Black ink on cream paper with minimal shading, focusing on outline and pattern.",
       },

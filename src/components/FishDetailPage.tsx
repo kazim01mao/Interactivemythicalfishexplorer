@@ -22,6 +22,13 @@ export function FishDetailPage({ fish, mountainName, waterName, onBack }: FishDe
 
   // Image URLs based on period
   const getImageUrl = (period: FishImage['period']) => {
+    // First check if the current image has a custom imageUrl
+    const image = fish.images.find(img => img.period === period);
+    if (image?.imageUrl) {
+      return image.imageUrl;
+    }
+    
+    // Fall back to default Unsplash images
     switch (period) {
       case 'ancient':
         return 'https://images.unsplash.com/photo-1719773906940-5b0cf605b1cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhbmNpZW50JTIwd29vZGN1dCUyMGlsbHVzdHJhdGlvbnxlbnwxfHx8fDE3NjE4Mjg4NTV8MA&ixlib=rb-4.1.0&q=80&w=1080';
